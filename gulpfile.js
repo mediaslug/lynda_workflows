@@ -28,7 +28,7 @@ gulp.task('coffee', function() { // define the coffee task
         .pipe(gulp.dest('components/scripts'))
 });
 
-gulp.task('js', function() {
+gulp.task('js', ['coffee'],function() {
     gulp.src(jsSources)
         .pipe(concat('script.js'))
         .pipe(browserify())
@@ -40,7 +40,10 @@ gulp.task('compass', function() {
         .pipe(compass({
             sass: 'components/sass',
             image: 'builds/development/images',
-            style: 'expanded'}))
-        .on('error', gutil.log)
+            style: 'expanded'})
+        .on('error', gutil.log))
         .pipe(gulp.dest('builds/development/css/'));
 });
+
+
+gulp.task('default', ['coffee', 'js', 'compass']);
