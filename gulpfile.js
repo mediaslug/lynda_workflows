@@ -4,6 +4,9 @@ var gulp = require('gulp'),                   // assign all methods an propertie
     concat = require('gulp-concat'),
     browserify = require('gulp-browserify'),
     compass = require('gulp-compass'),
+    gulpif = require('gulp-if'),
+    uglify = require('gulp-uglify'),
+
     connect = require('gulp-connect'); 
 
 var env,
@@ -15,7 +18,7 @@ var env,
     outputDir,
     sassStyle;
 
-env = process.env.NODE_ENV || 'development';
+env = process.env.NODE_ENV || 'production';
 
 if (env==='development') {
     outputDir= 'builds/development/';
@@ -54,6 +57,7 @@ gulp.task('js', ['coffee'],function() {
     gulp.src(jsSources)
         .pipe(concat('script.js'))
         .pipe(browserify())
+        .pipe(gulpif(env==='production', uglify()))
         .pipe(gulp.dest(outputDir +'js'))
         .pipe(connect.reload());
 });
