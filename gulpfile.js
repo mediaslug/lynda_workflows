@@ -3,7 +3,8 @@ var gulp = require('gulp'),                   // assign all methods an propertie
     coffee = require('gulp-coffee'),
     concat = require('gulp-concat'),
     browserify = require('gulp-browserify'),
-    compass = require('gulp-compass'); 
+    compass = require('gulp-compass'),
+    connect = require('gulp-connect'); 
 
 var coffeeSources = ['components/coffee/tagline.coffee'];
 
@@ -17,7 +18,7 @@ var sassSources= ['components/sass/style.scss'];
 
 
 // create tasks by using the task method
-gulp.task('log', function() { // define the log task which will execute an anonymous function
+gulp.task('log', function() { // define the log task which will execute an anonymous function/a callback
     gutil.log('workflows are awesome')
 });
 
@@ -32,7 +33,8 @@ gulp.task('js', ['coffee'],function() {
     gulp.src(jsSources)
         .pipe(concat('script.js'))
         .pipe(browserify())
-        .pipe(gulp.dest('builds/development/js'));
+        .pipe(gulp.dest('builds/development/js'))
+        .pipe(connect.reload());
 });
 
 gulp.task('compass', function() {
@@ -42,7 +44,8 @@ gulp.task('compass', function() {
             image: 'builds/development/images',
             style: 'expanded'})
         .on('error', gutil.log))
-        .pipe(gulp.dest('builds/development/css/'));
+        .pipe(gulp.dest('builds/development/css/'))
+        .pipe(connect.reload());
 });
 
 gulp.task('watch', function() {
@@ -52,5 +55,15 @@ gulp.task('watch', function() {
 
 });
 
+gulp.task('connect', function() {
+    connect.server({
+        root: 'builds/development',
+        livereload: true
+    });
+    
+});
 
-gulp.task('default', ['coffee', 'js', 'compass', 'watch']);
+
+
+
+gulp.task('default', ['coffee', 'js', 'compass', 'connect', 'watch']);
