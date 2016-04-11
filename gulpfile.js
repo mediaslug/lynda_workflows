@@ -1,3 +1,4 @@
+// gulp variables
 var gulp = require('gulp'),                   // assign all methods an properties of gulp to this variable
     gutil = require('gulp-util'),             // also create var for gulp-util
     coffee = require('gulp-coffee'),
@@ -12,6 +13,7 @@ var gulp = require('gulp'),                   // assign all methods an propertie
     pngCrush = require('imagemin-pngcrush'),
     connect = require('gulp-connect'); 
 
+// variables used throughout the script
 var env,
     coffeeSources,
     jssources,
@@ -21,6 +23,7 @@ var env,
     outputDir,
     sassStyle;
 
+// declare the environment we're in.
 env = process.env.NODE_ENV || 'production';
 
 if (env==='development') {
@@ -65,6 +68,8 @@ gulp.task('js', ['coffee'],function() {
         .pipe(connect.reload());
 });
 
+
+// compass task to process the scss (sass) files
 gulp.task('compass', function() {
     gulp.src(sassSources)
         .pipe(compass({
@@ -76,6 +81,7 @@ gulp.task('compass', function() {
         .pipe(connect.reload());
 });
 
+// watch task to monitor files for changes
 gulp.task('watch', function() {
     gulp.watch(coffeeSources, ['coffee']); 
     gulp.watch(jsSources, ['js']); 
@@ -88,6 +94,7 @@ gulp.task('watch', function() {
 
 });
 
+// connect task for handling server live reloads
 gulp.task('connect', function() {
     connect.server({
         root: outputDir,
@@ -96,6 +103,7 @@ gulp.task('connect', function() {
     
 });
 
+// html task
 gulp.task('html', function(){
    gulp.src('builds/development/*.html')
        .pipe(gulpif(env==='production', minifyHTML()))
@@ -103,6 +111,7 @@ gulp.task('html', function(){
        .pipe(connect.reload());
 });
 
+// images task
 gulp.task('images', function() {
     gulp.src('builds/development/images/**/*.*')
         .pipe(gulpif(env==='production', imagemin({
@@ -116,6 +125,7 @@ gulp.task('images', function() {
     
 });
 
+// configure the json task
 gulp.task('json', function(){
    gulp.src('builds/development/js/*.json')
     .pipe(gulpif(env==='production', jsonminify()))
@@ -123,7 +133,5 @@ gulp.task('json', function(){
     .pipe(connect.reload());
 });
 
-
-
-
+// configure the default task and dependencies
 gulp.task('default', ['coffee', 'js', 'html','json', 'compass', 'images', 'connect', 'watch']);
