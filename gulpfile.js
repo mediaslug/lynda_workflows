@@ -15,7 +15,8 @@ var jsSources = ['components/scripts/rclick.js',
 ];
 
 var sassSources= ['components/sass/style.scss'];
-
+var htmlSources = ['builds/development/*.html'];
+var jsonSources = ['builds/development/js/*.json'];
 
 // create tasks by using the task method
 gulp.task('log', function() { // define the log task which will execute an anonymous function/a callback
@@ -52,6 +53,8 @@ gulp.task('watch', function() {
     gulp.watch(coffeeSources, ['coffee']); 
     gulp.watch(jsSources, ['js']); 
     gulp.watch('components/sass/*.scss', ['compass']); 
+    gulp.watch(htmlSources, ['html']);
+    gulp.watch(jsonSources, ['json']);
 
 });
 
@@ -63,7 +66,17 @@ gulp.task('connect', function() {
     
 });
 
+gulp.task('html', function(){
+   gulp.src(htmlSources)
+   .pipe(connect.reload());
+});
+
+gulp.task('json', function(){
+   gulp.src(jsonSources)
+   .pipe(connect.reload());
+});
 
 
 
-gulp.task('default', ['coffee', 'js', 'compass', 'connect', 'watch']);
+
+gulp.task('default', ['coffee', 'js', 'html','json', 'compass', 'connect', 'watch']);
