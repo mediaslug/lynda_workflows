@@ -13,17 +13,17 @@ var jsSources = ['components/scripts/rclick.js',
     'components/scripts/template.js'
 ];
 
-var sassSources= ['/components/sass/style.scss'];
+var sassSources= ['components/sass/style.scss'];
 
 
-// create a task by using the task method
-gulp.task('log', function() { // define the log task
+// create tasks by using the task method
+gulp.task('log', function() { // define the log task which will execute an anonymous function
     gutil.log('workflows are awesome')
 });
 
 gulp.task('coffee', function() { // define the coffee task
     gulp.src(coffeeSources)
-        .pipe(coffee({bare:true})
+        .pipe(coffee({bare:true}) // compiles the javascript w/o putting it in a safety wrapper
         .on('error', gutil.log))
         .pipe(gulp.dest('components/scripts'))
 });
