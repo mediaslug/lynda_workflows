@@ -1,62 +1,274 @@
-/*
-Error: File to import not found or unreadable: rclick.
-       Load paths:
-         Compass::SpriteImporter
-         C:/Users/pabrams/Desktop/workflows/components/sass
-         C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets
-        on line 16 of C:/Users/pabrams/Desktop/workflows/components/sass/style.scss
+@import "http://fonts.googleapis.com/css?family=Patua+One|Inika";
+body {
+  background: #eddbba;
+  font-family: "Inika", serif;
+  font-size: 1.1em;
+}
 
-11: @import "base";
-12: @import "modules";
-13: 
-14: // JS partials
-15: @import "pixgrid";
-16: @import "rclick";
+#content {
+  color: #CC8E94;
+  font-size: 2em;
+}
 
-Backtrace:
-C:/Users/pabrams/Desktop/workflows/components/sass/style.scss:16
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:67:in `rescue in import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:45:in `import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:28:in `imported_file'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/import_node.rb:37:in `css_import?'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:313:in `visit_import'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `block in visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `block in with_base'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:115:in `with_frame'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/stack.rb:79:in `with_base'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:160:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `block in visit_children'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `map'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:52:in `visit_children'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:169:in `block in visit_children'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:181:in `with_environment'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:168:in `visit_children'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `block in visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:188:in `visit_root'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/base.rb:36:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:159:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/visitors/perform.rb:8:in `visit'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:36:in `css_tree'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/tree/root_node.rb:20:in `render'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/engine.rb:281:in `render'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:494:in `update_stylesheet'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/sass-3.4.22/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/sass_compiler.rb:40:in `compile!'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/commands/update_project.rb:49:in `perform'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/commands/base.rb:18:in `execute'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/commands/project_base.rb:19:in `execute'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/bin/compass:30:in `block in <top (required)>'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/bin/compass:44:in `call'
-C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-1.0.3/bin/compass:44:in `<top (required)>'
-C:/Ruby22-x64/bin/compass:23:in `load'
-C:/Ruby22-x64/bin/compass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: File to import not found or unreadable: rclick.\A        Load paths:\A          Compass::SpriteImporter\A          C:/Users/pabrams/Desktop/workflows/components/sass\A          C:/Ruby22-x64/lib/ruby/gems/2.2.0/gems/compass-core-1.0.3/stylesheets\A         on line 16 of C:/Users/pabrams/Desktop/workflows/components/sass/style.scss\A \A 11: @import \"base\";\A 12: @import \"modules\";\A 13: \A 14: // JS partials\A 15: @import \"pixgrid\";\A 16: @import \"rclick\";"; }
+.container {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Patua One", sans-serif;
+  font-size: 3em;
+}
+
+h1 {
+  font-size: 3.5em;
+  margin-bottom: 10px;
+  color: #507356;
+}
+@media (max-width: 700px) {
+  h1 {
+    font-size: 2.2em;
+  }
+}
+
+h2 {
+  font-size: 1.5em;
+  color: #3E2B3D;
+}
+
+p {
+  font-size: 1.3em;
+  line-height: 1.5em;
+  color: #3E2B3D;
+  margin-bottom: 20px;
+  margin-top: 15px;
+}
+
+section {
+  padding: 20px 0;
+}
+
+.artgroup:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.city {
+  background: url("../images/backgrounds/seattle_skyline.jpg") no-repeat 50% 20%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+@media (min-width: 801px) {
+  .city {
+    height: 350px;
+  }
+}
+@media (max-width: 800px) {
+  .city {
+    height: 150px;
+  }
+}
+@media (max-width: 300px) {
+  .city {
+    height: 100px;
+  }
+}
+.city img.logo {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+  max-width: 450px;
+  min-width: 250px;
+}
+
+.featuredartists {
+  background: #8D8862;
+  border-top: 20px solid #E3C691;
+  border-bottom: 50px solid #507356;
+}
+.featuredartists h1 {
+  font-size: 3em;
+  color: #263729;
+}
+@media (max-width: 700px) {
+  .featuredartists h1 {
+    font-size: 2em;
+  }
+}
+.featuredartists h2 {
+  margin-top: 20px;
+  font-size: 1.8em;
+  color: #dbb570;
+}
+@media (max-width: 700px) {
+  .featuredartists h2 {
+    display: none;
+  }
+}
+.featuredartists p {
+  color: #314634;
+}
+.featuredartists .artistlist {
+  padding-bottom: 20px;
+}
+.featuredartists .artistlist h2 {
+  margin-top: 5px;
+  font-size: 1.2em;
+  color: #ebd7b2;
+}
+.featuredartists .artistlist .item {
+  min-width: 95px;
+  color: #6f6b4d;
+  width: 18%;
+  float: left;
+  padding: 1%;
+  text-align: center;
+  position: relative;
+}
+.featuredartists .artistlist .item > img {
+  max-width: 130px;
+  margin: 0 auto;
+  display: block;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  width: 100%;
+}
+
+.potterypix {
+  background: url("../images/backgrounds/pottery_workshop.jpg") no-repeat 50% 20%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  border-bottom: 50px solid #8D8862;
+}
+@media (min-width: 801px) {
+  .potterypix {
+    height: 350px;
+  }
+}
+@media (max-width: 800px) {
+  .potterypix {
+    height: 150px;
+  }
+}
+@media (max-width: 300px) {
+  .potterypix {
+    height: 100px;
+  }
+}
+
+.aboutvenue img {
+  float: right;
+}
+
+.workshoppix {
+  background: url("../images/backgrounds/woodworking_workshop.jpg") no-repeat 50% 20%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  border-bottom: 50px solid #8D8862;
+}
+@media (min-width: 801px) {
+  .workshoppix {
+    height: 350px;
+  }
+}
+@media (max-width: 800px) {
+  .workshoppix {
+    height: 150px;
+  }
+}
+@media (max-width: 300px) {
+  .workshoppix {
+    height: 100px;
+  }
+}
+
+.ontour h1 {
+  color: #4d354c;
+  font-size: 3em;
+  bottom: 10px;
+  right: 10%;
+}
+.ontour h2 {
+  font-size: 1.8em;
+  color: #8D8862;
+  border-top: 1px solid #8D8862;
+  padding-top: 5px;
+}
+.ontour h3 {
+  font-size: 1.3em;
+  color: #6b4a69;
+  padding-bottom: 5px;
+}
+.ontour img {
+  float: right;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  padding-left: 20px;
+  width: 20%;
+  min-width: 120px;
+  max-width: 160px;
+}
+
+.pixgrid img {
+  max-width: 90px;
+  display: block;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border-radius: 15px;
+  padding: 0 5px 5px 0;
+  cursor: url(../images/misc/magnifying_glass.png), auto;
+}
+.pixgrid .preview img {
+  padding: 0;
+}
+
+.rclick .item {
+  display: block;
+  float: left;
+}
+.rclick .item img {
+  -moz-border-radius: none;
+  -webkit-border-radius: none;
+  border-radius: none;
+}
+.rclick .preview {
+  position: relative;
+}
+.rclick .preview img {
+  position: absolute;
+  z-index: 90;
+  max-width: 400px;
+  display: block;
+  border: 1px solid #FCF4DC;
+  margin: 0;
+  -moz-border-radius: none;
+  -webkit-border-radius: none;
+  border-radius: none;
+  -moz-box-shadow: black 5px 5px 12px;
+  -webkit-box-shadow: black 5px 5px 12px;
+  box-shadow: black 5px 5px 12px;
+}
